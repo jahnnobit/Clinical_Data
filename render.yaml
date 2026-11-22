@@ -1,0 +1,12 @@
+# Render Blueprint: deploys the dashboard as one free web service.
+# Render reads the Python version from .python-version.
+services:
+  - type: web
+    name: clinical-trial-oversight
+    runtime: python
+    plan: free
+    # Install packages, then rebuild every output from the saved data,
+    # so the deployed numbers always come from the code in this repository.
+    buildCommand: pip install -r requirements.txt && python run_all.py
+    startCommand: gunicorn --chdir dashboard app:server --workers 1 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /

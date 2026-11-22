@@ -1,0 +1,13 @@
+{
+  "source": "ClinicalTrials.gov API v2",
+  "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+  "api_version": "2.0.5",
+  "registry_data_timestamp": "2026-11-20T10:00:05",
+  "downloaded_at_utc": "2026-11-22T14:28:54+00:00",
+  "query_params": {
+    "query.cond": "cancer",
+    "query.term": "AREA[LocationCountry](Austria OR Belgium OR Bulgaria OR Croatia OR Cyprus OR \"Czech Republic\" OR Czechia OR Denmark OR Estonia OR Finland OR France OR Germany OR Greece OR Hungary OR Ireland OR Italy OR Latvia OR Lithuania OR Luxembourg OR Malta OR Netherlands OR Poland OR Portugal OR Romania OR Slovakia OR Slovenia OR Spain OR Sweden) AND AREA[StudyType]INTERVENTIONAL AND AREA[Phase]PHASE3 AND AREA[StartDate]RANGE[2015-01-01,MAX]",
+    "fields": "protocolSection,hasResults"
+  },
+  "study_count": 1937
+}

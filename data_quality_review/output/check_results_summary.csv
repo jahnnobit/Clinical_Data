@@ -1,0 +1,22 @@
+check_id,dataset,severity,rule,findings_raw_data,errors_injected,errors_caught,catch_rate,findings_injected_data,false_positives
+DM01,DM,Critical,Each subject must have a unique subject identifier.,0,2,2,1.0,3,0
+DM02,DM,Major,"Age must be present and within 18-100 years (assumed plausibility limits, not a clinical rule).",0,2,2,1.0,2,0
+DM03,DM,Major,"Sex must be one of M, F, U.",0,2,2,1.0,2,0
+DM04,DM,Major,Reference start date must not be after reference end date.,0,2,2,1.0,2,0
+DM05,DM,Major,Every date that is present must be a valid ISO 8601 date (complete or partial) and a real calendar date.,0,3,3,1.0,3,0
+AE01,AE,Critical,Every adverse event must belong to a subject who exists in Demographics.,0,3,3,1.0,3,0
+AE02,AE,Major,AE end date must not be before AE start date.,0,3,3,1.0,3,0
+AE03,AE,Critical,The reported adverse event term must be present.,0,2,2,1.0,2,0
+AE04,AE,Major,Every reported AE term must have a coded dictionary term (AE not coded).,0,2,2,1.0,2,0
+AE05,AE,Major,Serious event flag must be Y or N.,0,2,2,1.0,2,0
+AE06,AE,Critical,A serious adverse event must have an outcome recorded.,0,2,2,1.0,2,0
+AE07,"AE, DM",Minor,AE start date before the subject's reference start date (pre-treatment event). Flag for review.,65,2,2,1.0,67,0
+AE08,AE,Major,The same adverse event must not be recorded twice.,2,3,3,1.0,8,0
+VS01,VS,Major,"Systolic blood pressure must be within 60-250 mmHg (assumed plausibility limits, not a clinical rule).",0,3,3,1.0,3,0
+VS02,VS,Major,Diastolic blood pressure must not be higher than systolic blood pressure from the same measurement.,0,2,2,1.0,2,0
+VS03,VS,Major,"Pulse must be within 30-200 beats/min and temperature within 34-42 °C (assumed plausibility limits, not clinical rules).",0,3,3,1.0,3,0
+VS04,VS,Minor,A vital sign result that is present must have a unit.,0,3,3,1.0,3,0
+LB01,LB,Major,A result outside the normal range must be flagged as abnormal in LBNRIND.,0,3,3,1.0,3,0
+LB02,LB,Minor,"A laboratory result that is present must have a standard unit, for tests that are reported with a unit.",0,3,3,1.0,3,0
+X01,"VS, LB",Minor,Visit dates must be in chronological order of VISITNUM within each subject.,200,3,3,1.0,203,0
+TOTAL,,,,267,50,50,1.0,321,0
